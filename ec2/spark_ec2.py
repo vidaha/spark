@@ -449,7 +449,6 @@ def launch_cluster(conn, opts, cluster_name):
         print "Launched master in %s, regid = %s" % (zone, master_res.id)
 
     # Give the instances descriptive names
-    # TODO: Add retry logic for tagging with name since it's used to identify a cluster.
     for master in master_nodes:
         name = '{cn}-master-{iid}'.format(cn=cluster_name, iid=master.id)
         for i in range(0, 5):
